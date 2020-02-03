@@ -1,6 +1,6 @@
 import loadProfile from '../common/load-profile.js';
 import { getUser, saveUser } from '../data/api.js';
-import quests from '../data/quest-data.js';
+import details from '../data/quest-data.js';
 import createChoice from './create-choice.js';
 import findById from '../common/find-by-id.js';
 import scoreQuest from './score-quest.js';
@@ -12,7 +12,7 @@ const searchParams = new URLSearchParams(window.location.search);
 // go get the quest id from the URL
 const questId = searchParams.get('id');
 // go use old faithful to find our quest
-const quest = findById(quests, questId);
+const quest = findById(details, questId);
 
 // if there's no such quest 
 if (!quest) {
@@ -30,8 +30,8 @@ const resultDescription = document.getElementById('result-description');
 
 // use the quest that we found to populate the dom
 title.textContent = quest.title;
-image.src = '../assets/quests/' + quest.image;
-audio.src = '../assets/quests/' + quest.audio;
+image.src = '../assets/details/' + quest.image;
+audio.src = '../assets/details/' + quest.audio;
 description.textContent = quest.description;
 
 // for each of the quest's choices
@@ -43,7 +43,7 @@ for (let index = 0; index < quest.choices.length; index++) {
     choices.appendChild(choiceDOM);
 }
 
-choiceForm.addEventListener('submit', function(event) {
+choiceForm.addEventListener('submit', function (event) {
     event.preventDefault();
 
     // get user choice
@@ -60,7 +60,7 @@ choiceForm.addEventListener('submit', function(event) {
     saveUser(user);
 
     // update UI
-    audio.src = '../assets/quests/' + quest.action;
+    audio.src = '../assets/details/' + quest.action;
     choiceForm.classList.add('hidden');
     result.classList.remove('hidden');
     resultDescription.textContent = choice.result;

@@ -1,6 +1,6 @@
 function createQuestLink(quest) {
     const link = document.createElement('a');
-    link.classList.add('quest');
+    link.classList.add('details');
 
     // const searchParams = new URLSearchParams();
     // searchParams.set('id', quest.id);

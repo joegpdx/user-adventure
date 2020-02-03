@@ -1,4 +1,4 @@
-#quests {
+#details {
     position: relative;
     background-image: url("../assets/planets-of-the-solar.png");
     background-size: contain;
@@ -8,17 +8,17 @@
     margin: auto;
 }
 
-.quest {
+.details {
     position: absolute;
     color: green;
     text-shadow: 1px 1px 1px black;
 }
 
-.quest.completed {
+.details.completed {
     color: whitesmoke;
     font-size: .9em;
 }
 
-.quest.completed:after {
+.details.completed:after {
     content: ' ✔';
 }
