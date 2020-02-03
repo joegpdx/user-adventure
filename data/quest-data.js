@@ -99,10 +99,10 @@ const purgatory = {
     }]
 };
 
-const quests = [
+const details = [
     one,
     two,
     purgatory,
 ];
 
-export default quests;
+export default details;
